@@ -1,0 +1,137 @@
+html, body{
+  width: 100%;
+  height: 100%;
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  word-wrap: break-word;
+}
+
+p{
+  font-size: 15pt;
+  line-height: 24pt;
+}
+
+a, button{
+  cursor: pointer;
+}
+
+button:focus,
+input:focus,
+select:focus,
+textarea:focus{
+  outline: none;
+  box-shadow: 0px 0px 2px 2px rgba(255, 255, 255, 0.3);
+}
+
+.centraliza-flex{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.titulo{
+  margin: 20px 0 30px 0;
+  display: block;
+  letter-spacing: 1.6px;
+}
+
+h1.titulo{
+  font-size: 32pt;
+  text-align: center;
+}
+
+h2.titulo{
+  font-size: 24pt;
+}
+
+h3.titulo{
+  font-size: 20pt;
+}
+
+h4.titulo{
+  font-size: 17pt;
+}
+
+h5.titulo{
+  font-size: 12pt;
+}
+
+.linha{
+  margin-top: 30px;
+  float: left;
+  width: 100%;
+}
+
+.coluna{
+  float: left;
+  padding: 0 18px;
+  box-sizing: border-box;
+}
+
+.coluna.dois{
+  width: 16.66%;
+}
+
+.coluna.tres{
+  width: 25%;
+}
+
+.coluna.quatro{
+  width: 33.33%;
+}
+
+.coluna.seis{
+  width: 50%;
+}
+
+.coluna.oito{
+  width: 66.66%;
+}
+
+.coluna.doze{
+  width: 100%;
+}
+
+.texto-branco{
+  color: white;
+}
+
+.texto-centro{
+  text-align: center;
+}
+
+.texto-esquerda{
+  text-align: left;
+}
+
+.texto-direita{
+  text-align: right;
+}
+
+.texto-justificado{
+  text-align: justify;
+}
+
+.item-modal{
+  animation-fill-mode: forwards;
+}
+
+.img-justifica{
+  width: 100%;
+}
+
+/*Menor que 900px*/
+@media screen and (max-width: 900px){
+  .coluna.dois,
+  .coluna.tres,
+  .coluna.quatro,
+  .coluna.seis,
+  .coluna.oito,
+  .coluna.doze{
+    width: 100%;
+    padding: 0 5px;
+  }
+}

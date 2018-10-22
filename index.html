@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#25022b">
+
+  <!-- Meta tags do Facebook -->
+  <meta property="og:image" content="img/favicon.png">
+  <meta property="og:title" content="Lucas Souza - Desenvolvedor Web">
+  <meta property="og:description" content="Seja muito bem-vindo, conheça um pouco do meu trabalho!">
+
+  <title>Lucas Souza - Bem vindo ao meu espaço!</title>
+
+  <link rel="icon" type="image/png" href="img/favicon.png">
+  <link rel="stylesheet" href="css/manipulador.css">
+  <link rel="stylesheet" href="css/animacoes.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro">
+</head>
+<body class="bloquear-scroll">
+  <div id="tela-preload-site">
+      <div class="centro">
+         <svg viewBox="-120 -120 240 240">
+           <circle r="94" stroke-dasharray="118 29" class="externo"></circle>
+           <circle r="80" stroke-dasharray="134 33" class="interno"></circle>
+           <!-- <text width="200" fill="black" font-family="sans-serif" font-size="12pt" transform="translate(12,4) rotate(220)">
+           <path id="curve"
+           d="M 119.44045,-2.3571472 A 105.83332,105.83332 0 0 1 13.607134,103.47617 105.83332,105.83332 0 0 1 -92.226187,-2.3571472 105.83332,105.83332 0 0 1 13.607134,-108.19047 105.83332,105.83332 0 0 1 119.44045,-2.3571472 Z" />
+           <textPath alignment-baseline="baseline" xlink:href="#curve">
+           Lucas Souza - Web developer
+         </textPath>
+       </text> -->
+         </svg>
+
+         <img src="img/logo_2.png" alt="Logo Site">
+      </div>
+  </div>
+  <div class="botoes-fixo esquerda topo">
+    <a href="http://www.youtube.com/" target="_blank" class="botao-item color-youtube" title="YouTube">
+      <span class="fa fa-youtube-play"></span>
+    </a>
+    <a href="https://www.facebook.com/lucassouzadeveloper/" target="_blank" class="botao-item color-facebook" title="Facebook">
+      <span class="fa fa-facebook"></span>
+    </a>
+    <a href="https://www.instagram.com/lucas_souza_17/?hl=pt-br" target="_blank" class="botao-item color-instagram" title="Instagram">
+      <span class="fa fa-instagram"></span>
+    </a>
+    <a class="botao-item color-whatsapp" title="WhatsApp">
+      <span class="fa fa-whatsapp"></span>
+      <div class="botao-item-descricao">(88) 99724-6963</div>
+    </a>
+  </div>
+
+  <div class="botoes-fixo direita topo">
+    <button id="abrir-menu" class="inacessivel btn-alterna-modal botao-item" modal-alvo="#menu-nav-dropdown">
+      <div></div>
+      <div></div>
+      <div></div>
+    </button>
+  </div>
+
+  <div class="botoes-fixo direita baixo">
+    <button id="subir-para-cima" class="inacessivel botao-item">
+      <span class="fa fa-angle-double-up"></span>
+    </button>
+  </div>
+
+  <div class="item-modal menu-cards" id="menu-nav-dropdown" duracao-modal="500"
+  animacao-modal="apareceCima">
+  <h3 class="meu-nome">Luca<strong>S</strong>ouza</h3>
+  <ul class="scroll-personalizado">
+    <li>
+      <a href="#sessao-introducao" class="scroll-para-elemento btn-fecha-modal" modal-alvo="#menu-nav-dropdown"
+      title="Introdução">
+      <div class="container-anim">
+        <span class="fa fa-home"></span>
+        <span class="titulo-item-menu">Introdução</span>
+      </div>
+    </a>
+  </li>
+  <li>
+    <a href="#sessao-sobre" class="scroll-para-elemento btn-fecha-modal" modal-alvo="#menu-nav-dropdown"
+    title="Sobre mim">
+    <div class="container-anim">
+      <span class="fa fa-user"></span>
+      <span class="titulo-item-menu">Sobre mim</span>
+    </div>
+  </a>
+</li>
+<li>
+  <a href="#sessao-profissional" class="scroll-para-elemento btn-fecha-modal" modal-alvo="#menu-nav-dropdown"
+  title="Eu como profissional">
+  <div class="container-anim">
+    <span class="fa fa-suitcase"></span>
+    <span class="titulo-item-menu">Eu como profissional</span>
+  </div>
+</a>
+</li>
+<li>
+  <a href="#sessao-portifolio" class="scroll-para-elemento btn-fecha-modal" modal-alvo="#menu-nav-dropdown"
+  title="Portifólio">
+  <div class="container-anim">
+    <span class="fa fa-code"></span>
+    <span class="titulo-item-menu">Portifólio</span>
+  </div>
+</a>
+</li>
+<li>
+  <a href="#sessao-contato" class="scroll-para-elemento btn-fecha-modal" modal-alvo="#menu-nav-dropdown"
+  title="Contato">
+  <div class="container-anim">
+    <span class="fa fa-envelope"></span>
+    <span class="titulo-item-menu">Contato</span>
+  </div>
+</a>
+</li>
+</ul>
+</div>
+
+<div id="modal-detalhes-item-portifolio" class="item-modal" duracao-modal="500"
+animacao-modal="aumenta" modal-bloqueia-scroll="true">
+
+<button class="btn-fecha-modal" modal-alvo="#modal-detalhes-item-portifolio">
+  <span class="fa fa-close"></span>
+</button>
+
+<div class="linha">
+  <div class="coluna seis">
+    <img class="imagem-item-portifolio img-justifica" src="">
+  </div>
+  <div class="coluna seis">
+    <h1 class="titulo titulo-item-portifolio"></h1>
+    <a target="_blank" href="" class="link-ir-para-site link-destaque"><span class="fa fa-globe"></span>
+      Você pode ter acesso a este projeto por aqui</a>
+      <p class="descricao-item-portifolio"></p>
+    </div>
+  </div>
+</div>
+
+<div id="sessao-inicio" class="sessao-pagina centraliza-flex">
+  <div id="inicio-centro">
+    <div id="imagem-introducao">
+      <img src="img/logo.png" alt="Lucas Souza - Web developer">
+    </div>
+    <div id="texto-introducao">
+      <h1>Luca<div>S</div>ouza</h1>
+      <h3>Web developement</h3>
+    </div>
+    <div id="menu-principal" class="menu-cards">
+      <ul>
+        <li>
+          <a href="#sessao-introducao" class="scroll-para-elemento" title="Introdução">
+            <div class="container-anim">
+              <span class="fa fa-home"></span>
+              <span class="titulo-item-menu">Introdução</span>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="#sessao-sobre" class="scroll-para-elemento" title="Sobre mim">
+            <div class="container-anim">
+              <span class="fa fa-user"></span>
+              <span class="titulo-item-menu">Sobre mim</span>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="#sessao-profissional" class="scroll-para-elemento" title="Eu como profissional">
+            <div class="container-anim">
+              <span class="fa fa-suitcase"></span>
+              <span class="titulo-item-menu">Eu como profissional</span>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="#sessao-portifolio" class="scroll-para-elemento" title="Portifólio">
+            <div class="container-anim">
+              <span class="fa fa-code"></span>
+              <span class="titulo-item-menu">Portifólio</span>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="#sessao-contato" class="scroll-para-elemento" title="Contato">
+            <div class="container-anim">
+              <span class="fa fa-envelope"></span>
+              <span class="titulo-item-menu">Contato</span>
+            </div>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+<div id="sessao-introducao" class="sessao-pagina modelo-1 textual">
+  <h1 class="titulo anima-scroll-item" animacao="apareceBaixo" duracao="800">Introdução</h1>
+  <div class="linha">
+    <h2 class="titulo anima-scroll-item" animacao="apareceBaixo" duracao="700" >
+      <span class="fa fa-usb"></span> Dispositivos</h2>
+      <div class="coluna quatro anima-scroll-item" animacao="apareceBaixo" duracao="1000">
+        <h3 class="titulo"><span class="fa fa-desktop"></span> Desktops</h3>
+        <p class="texto-justificado">
+          Os computadores estão presentes na maioria dos lares brasileiros, e é
+          fato que na vida de alguns de nós este representa papel indispensável,
+          para o trabalho, para o lazer, comunicação e também para o comércio online.
+        </p>
+      </div>
+      <div class="coluna quatro anima-scroll-item" animacao="apareceBaixo" duracao="1000">
+        <h3 class="titulo"><span class="fa fa-laptop"></span> Notebooks</h3>
+        <p class="texto-justificado">
+          Os dispositivos de médio porte não ficam atrás, atualmente a procura de
+          interessados em adiquirir um destes dispositivos tem aumentado
+          consideravelmente por ter configurações semelhantes ao de um desktop
+          de mesa são a ferramenta ideal para quem sempre muda seu ambiente de trabalho.
+        </p>
+      </div>
+      <div class="coluna quatro anima-scroll-item" animacao="apareceBaixo" duracao="1000">
+        <h3 class="titulo"><span class="fa fa-tablet"></span> Celulares e tablets</h3>
+        <p class="texto-justificado">
+          E é claro, nossos velhos amigos os gadgets portáteis não ficam atrás, seu
+          uso e bastante significativo, por serem mais baratos e discretos, são
+          ideais para quem quer está sempre conectado e não perder nada do que
+          está acontecendo mundo afora.
+        </p>
+      </div>
+    </div>
+    <div class="linha">
+      <h2 class="titulo anima-scroll-item" animacao="apareceBaixo" duracao="700">
+        <span class="fa fa-question"></span> Do que um bom site precisa</h2>
+        <div class="coluna seis anima-scroll-item" animacao="apareceBaixo" duracao="1000">
+          <h3 class="titulo"><span class="fa fa-cogs"></span> Compatibilidade</h3>
+          <p class="texto-justificado">
+            Mas quem garante que o seu site poderá ser acessível a tantos usuários
+            que possuem os mais variados tipos de dispositivos? Já pensou? Seria um
+            inconveniente perder um potencial cliente da sua loja, ou mesmo um visitante
+            do seu site por um problema tão banal.
+          </p>
+        </div>
+        <div class="coluna seis anima-scroll-item" animacao="apareceBaixo" duracao="1000">
+          <h3 class="titulo"><span class="fa fa-object-group"></span> Responsividade</h3>
+          <p class="texto-justificado">
+            A responsividade trata da capacidade que um aplicativo ou site tem de
+            se adaptar a resolução do seu dispositivo, da maneira que proporcione
+            uma melhor experiência e conforto a quem o acessa. Então? Não seria
+            melhor que seu site fosse responsivo?
+          </p>
+        </div>
+      </div>
+    </div>
+    <div id="sessao-sobre" class="sessao-pagina modelo-2 textual">
+      <h1 class="titulo anima-scroll-item" animacao="apareceBaixo" duracao="800">Sobre mim</h1>
+      <div class="linha">
+        <div class="texto-com-img esquerda">
+          <div class="container-img img-mudar anima-scroll-item" animacao="cresceDiminui" duracao="700">
+            <div class="img-content">
+              <div class="container-anim" id="anim-minha-foto">
+                <img class="img-vista" src="img/foto_1.jpg" alt="Esse aqui sou eu">
+                <img class="img-escondida" src="img/foto_1.jpg">
+              </div>
+            </div>
+            <h5 class="titulo-img">Esse aqui sou eu</h5>
+          </div>
+          <h2 class="titulo anima-scroll-item" animacao="apareceBaixo" duracao="700">Sou Lucas, prazer!!!</h2>
+          <p class="container-texto anima-scroll-item" animacao="apareceBaixo" duracao="700">
+            Olá, meu nome e Lucas Ferreira de Souza, tenho <span class="at-minha-idade"></span> anos, moro no município
+            de Icó Ceará, sou graduado em análise e desenvolvimento de sistemas,
+            desde pequeno eu sempre gostei de tecnologia por isso decidi seguir na
+            área de desenvolvedor, gosto muito do que faço e me sinto feliz com a
+            escolha que fiz!!
+          </p>
+        </div>
+      </div>
+      <div class="linha">
+        <div class="coluna seis anima-scroll-item" animacao="apareceBaixo" duracao="800">
+          <h2 class="titulo"><span class="fa fa-heart"></span> No que eu acredito</h2>
+          <p>
+            Em primeiro lugar eu acredito em Deus acima de tudo, depois acredito que
+            a maior arma que uma pessoa pode ter aqui nesse mundo é o conhecimento,
+            e outra coisa em que acredito é que se você tenta tenta consertar aquilo
+            que está quebrado e percebe que não tem como, tente transformar em algo novo!
+          </p>
+        </div>
+        <div class="coluna seis anima-scroll-item" animacao="apareceBaixo" duracao="800">
+          <h2 class="titulo"><span class="fa fa-gamepad"></span> Meus passatempos</h2>
+          <p>
+            Eu gosto muito de games e principalmente gosto muito da área da robótica,
+            programação e eletrônica, sempre encarei essas atividades mais como um hobby
+            do que como um trabalho, acho que isso é essencial pois me permite unir o
+            útil ao agradável.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div id="sessao-profissional" class="sessao-pagina modelo-1 textual">
+      <h1 class="titulo anima-scroll-item" animacao="apareceBaixo" duracao="800">Eu como profissional</h1>
+      <div class="linha">
+        <div class="coluna doze anima-scroll-item" animacao="apareceBaixo" duracao="900">
+          <h2 class="titulo"><span class="fa fa-black-tie"></span> Meu Lattes</h2>
+          <p>Você pode saber mais sobre minha carreira profissional visitando o meu
+            <a target="_blank" href="http://lattes.cnpq.br/1232645710876251"
+            class="link-destaque branco"><strong>Currículo Lattes</strong></a></p>
+          </div>
+        </div>
+        <div class="linha">
+          <div class="coluna doze item-historico-experiencia">
+            <div class="cal-inicio-fim-experiencia anima-scroll-item" animacao="cresceDiminui" duracao="1000">
+              <div class="container-anim">
+                <div class="animacao-frente">
+                  <span class="fa fa-calendar"></span>
+                </div>
+                <div class="animacao-tras">
+                  <h5><span class="fa fa-hourglass-start"></span> 2010</h5>
+                  <h5><span class="fa fa-hourglass-end"></span> 2014</h5>
+                </div>
+              </div>
+            </div>
+            <div class="anima-scroll-item info-item-experiencia" animacao="apareceBaixo" duracao="1200">
+              <h2 class="titulo titulo-experiencia">Autônomo</h2>
+              <h4 class="titulo funcao-experiencia">Cargo: manutenção de computadores e notebooks</h4>
+              <p>
+                Principais atividades: Formatação de computadores, particionamento de discos,
+                limpeza e recuperação de dados, instalação de programas, reposição ou substituição
+                de componentes defeituosos.
+              </p>
+            </div>
+          </div>
+          <div class="coluna doze item-historico-experiencia">
+            <div class="cal-inicio-fim-experiencia anima-scroll-item" animacao="cresceDiminui" duracao="1000">
+              <div class="container-anim">
+                <div class="animacao-frente">
+                  <span class="fa fa-calendar"></span>
+                </div>
+                <div class="animacao-tras">
+                  <h5><span class="fa fa-hourglass-start"></span> 2016</h5>
+                  <h5><span class="fa fa-hourglass-end"></span> 2017</h5>
+                </div>
+              </div>
+            </div>
+            <div class="anima-scroll-item info-item-experiencia" animacao="apareceBaixo" duracao="1200">
+              <h2 class="titulo titulo-experiencia">Sunt - Soluções em TI</h2>
+              <h4 class="titulo funcao-experiencia">Cargo: Web desenvolvedor</h4>
+              <p>
+                Principais atividades: Desenvolvimento front-end, elaboração e criação de páginas web,
+                desenvolvimento back-end, implementação de regras de negócio na codificação e
+                gerenciamento do banco de dados
+                <br>
+                <br>
+                Atividades secundárias: Designer de banners e logos.
+              </p>
+            </div>
+          </div>
+          <div class="coluna doze item-historico-experiencia">
+            <div class="cal-inicio-fim-experiencia anima-scroll-item" animacao="cresceDiminui" duracao="1000">
+              <div class="container-anim">
+                <div class="animacao-frente">
+                  <span class="fa fa-calendar"></span>
+                </div>
+                <div class="animacao-tras">
+                  <h5><span class="fa fa-hourglass-start"></span> 2017</h5>
+                  <h5><span class="fa fa-hourglass-end"></span> Atual</h5>
+                </div>
+              </div>
+            </div>
+            <div class="anima-scroll-item info-item-experiencia" animacao="apareceBaixo" duracao="1200">
+              <h2 class="titulo titulo-experiencia">Freelancer</h2>
+              <h4 class="titulo funcao-experiencia">Cargo: Web, mobile desenvolvedor</h4>
+              <p>
+                Principais atividades: Desenvolvimento front-end, elaboração e criação de páginas web,
+                desenvolvimento back-end, implementação de regras de negócio na codificação e gerenciamento
+                do banco de dados, desenvolvimento de aplicativos voltados a plataforma Android.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="linha">
+          <div class="coluna doze anima-scroll-item" animacao="apareceBaixo" duracao="900">
+            <h2 class="titulo"><span class="fa fa-code"></span> Habilidades</h2>
+          </div>
+          <div class="linha">
+            <div class="coluna tres anima-scroll-item" animacao="cresceDiminui" duracao="600">
+              <div class="grafico-pizza" porcento="94" titulo="Javascript"></div>
+            </div>
+            <div class="coluna tres anima-scroll-item" animacao="cresceDiminui" duracao="700">
+              <div class="grafico-pizza" porcento="100" titulo="CSS"></div>
+            </div>
+            <div class="coluna tres anima-scroll-item" animacao="cresceDiminui" duracao="800">
+              <div class="grafico-pizza" porcento="100" titulo="HTML"></div>
+            </div>
+            <div class="coluna tres anima-scroll-item" animacao="cresceDiminui" duracao="900">
+              <div class="grafico-pizza" porcento="83" titulo="PHP"></div>
+            </div>
+          </div>
+          <div class="linha">
+            <div class="coluna tres anima-scroll-item" animacao="cresceDiminui" duracao="600">
+              <div class="grafico-pizza" porcento="65" titulo="SQL"></div>
+            </div>
+            <div class="coluna tres anima-scroll-item" animacao="cresceDiminui" duracao="700">
+              <div class="grafico-pizza" porcento="65" titulo="Java"></div>
+            </div>
+            <div class="coluna tres anima-scroll-item" animacao="cresceDiminui" duracao="800">
+              <div class="grafico-pizza" porcento="35" titulo="ASP.NET"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="sessao-portifolio" class="sessao-pagina modelo-2 textual">
+        <h1 class="titulo anima-scroll-item" animacao="apareceBaixo" duracao="800">Meu portifólio</h1>
+        <div class="linha">
+          <div class="coluna doze anima-scroll-item" animacao="apareceBaixo" duracao="900">
+            <p class="texto-centro">
+              Aqui você pode acompanhar um pouco de alguns trabalhos que são de minha autoria
+              ou onde eu exerci alguma participação
+            </p>
+          </div>
+        </div>
+        <div class="linha">
+          <div class="coluna tres anima-scroll-item" animacao="vindoDaEsquerda" duracao="1500">
+            <div class="item-portifolio">
+              <div class="container-anim">
+                <div class="animacao-frente">
+                  <div class="container-titulo">
+                    <h3 class="titulo-item-portifolio">PlayFunny - Simulador empresarial</h3>
+                  </div>
+                </div>
+                <div class="animacao-tras">
+                  <div class="ct-img">
+                    <img src="img/portifolio/playfull.png" class="img-portifolio" alt="Screen capture da página">
+                  </div>
+                </div>
+              </div>
+              <p class="descricao-item-portifolio">
+                O PlayFunny é um jogo empresarial que simula o cenário de uma fábrica de
+                cadernos, ele foi desenvolvido com o objetivo de ensinar ao jogador um pouco
+                de como se gerencia uma fábrica real, fazendo gastos, investimentos e
+                acumulando dívidas e também como obter lucro.
+              </p>
+            </div>
+          </div>
+          <div class="coluna tres anima-scroll-item" animacao="vindoDaEsquerda" duracao="1300">
+            <div class="item-portifolio">
+              <div class="container-anim">
+                <div class="animacao-frente">
+                  <div class="container-titulo">
+                    <h3 class="titulo-item-portifolio">Sistema de reserva e solicitações</h3>
+                  </div>
+                </div>
+                <div class="animacao-tras">
+                  <div class="ct-img">
+                    <img src="img/portifolio/dti.png" class="img-portifolio" alt="Screen capture da página">
+                  </div>
+                </div>
+              </div>
+              <p class="descricao-item-portifolio">
+                Esse sistema foi construído para realizar o controle dos equipamentos utilizados
+                pelos professores na faculdade Vale do Salgado, ele permite realizar previamente
+                a reserva do equipamento e relatar problemas ou defeitos que eles podem vir a sofrer.
+              </p>
+              <a href="http://nexasfvs.com.br/dti/" class="link-endereco-item-portifolio"></a>
+            </div>
+          </div>
+          <div class="coluna tres anima-scroll-item" animacao="vindoDaEsquerda" duracao="1000">
+            <div class="item-portifolio">
+              <div class="container-anim">
+                <div class="animacao-frente">
+                  <div class="container-titulo">
+                    <h3 class="titulo-item-portifolio">Simpoc - Simpósio de computação</h3>
+                  </div>
+                </div>
+                <div class="animacao-tras">
+                  <div class="ct-img">
+                    <img src="img/portifolio/simpoc.png" class="img-portifolio" alt="Screen capture da página">
+                  </div>
+                </div>
+              </div>
+              <p class="descricao-item-portifolio">
+                Página desenvolvida para divulgar o evento anual que ocorre na Faculdade
+                Vale do Salgado, que tem como objetivo contribuir para o enriquecimento
+                da ciência regional, por meio do incentivo a pesquisa e a inovação,
+                promovendo o diálogo entre academia e a sociedade.
+              </p>
+              <a href="http://nexasfvs.com.br/simpoc/" class="link-endereco-item-portifolio"></a>
+            </div>
+          </div>
+          <div class="coluna tres anima-scroll-item" animacao="vindoDaEsquerda" duracao="1000">
+            <div class="item-portifolio">
+              <div class="container-anim">
+                <div class="animacao-frente">
+                  <div class="container-titulo">
+                    <h3 class="titulo-item-portifolio">Mural de alunos do Nexas</h3>
+                  </div>
+                </div>
+                <div class="animacao-tras">
+                  <div class="ct-img">
+                    <img src="img/portifolio/mural-nexas.png" class="img-portifolio" alt="Screen capture da página">
+                  </div>
+                </div>
+              </div>
+              <p class="descricao-item-portifolio">
+                O Mural do Nexas é uma plataforma voltada para a catalogação dos alunos
+                que cursaram ou ainda cursam análise e desenvolvimento de sistemas na
+                Faculdade Vale do Salgado, lá você pode encontrar informações sobre o
+                aluno relacionadas ao âmbito acadêmico.
+              </p>
+              <a href="http://nexasfvs.com.br/mural/" class="link-endereco-item-portifolio"></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="sessao-contato" class="sessao-pagina modelo-1 textual">
+        <h1 class="titulo anima-scroll-item" animacao="apareceBaixo" duracao="800">Contato</h1>
+        <div class="linha centraliza-texto">
+          <div class="coluna seis anima-scroll-item" animacao="vindoDaEsquerda" duracao="1000">
+            <h3 class="titulo">Você pode falar comigo por:</h3>
+            <ul class="lista-revelacao">
+              <li>
+                <a class="item-revelacao whatsapp">
+                  <div class="container-anim">
+                    <span class="conteudo frente"><span class="fa fa-whatsapp"></span>WhatsApp</span>
+                    <span class="conteudo verso back-whatsapp"><span class="fa fa-whatsapp"></span>(88) 99724-6963</span>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a class="item-revelacao gmail">
+                  <div class="container-anim">
+                    <span class="conteudo frente"><span class="fa fa-google"></span>GMail</span>
+                    <span class="conteudo verso back-gmail"><span class="fa fa-google"></span>lucasferreiradesouza16</span>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.facebook.com/lucas.ferreiradesouza.1" class="item-revelacao face">
+                  <div class="container-anim">
+                    <span class="conteudo frente"><span class="fa fa-facebook"></span>Facebook</span>
+                    <span class="conteudo verso back-facebook"><span class="fa fa-facebook"></span>lucas.ferreiradesouza.1</span>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.instagram.com/lucas_souza_17/?hl=pt-br" class="item-revelacao insta">
+                  <div class="container-anim">
+                    <span class="conteudo frente"><span class="fa fa-instagram"></span>Instagram</span>
+                    <span class="conteudo verso back-instagram"><span class="fa fa-instagram"></span>lucas_souza_17</span>
+                  </div>
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="coluna seis anima-scroll-item" animacao="vindoDaDireita" duracao="1000">
+            <iframe id="frame-pagina-face" src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FLucas-Souza-Web-developer-131740457545656%2F&tabs=timeline&width=500&height=380&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId"
+            width="500" height="380" scrolling="no"
+            frameborder="0" allowTransparency="true"></iframe>
+          </div>
+        </div>
+      </div>
+      <footer>
+        <div class="centro">
+          <a href="">Todos os direitos reservados a <strong>Lucas Souza</strong></a>
+        </div>
+      </footer>
+    </body>
+    </html>
+    <script type="text/javascript" src="js/manipulador.js"></script>
+    <script type="text/javascript" src="js/modal.js"></script>
+    <script type="text/javascript" src="js/form.js"></script>
+    <script type="text/javascript" src="js/script.js"></script>
+    <script type="text/javascript">
+     var prelSite = query('#tela-preload-site');
+      setTimeout(function(){
+         prelSite.classes.add('sumir');
+         setTimeout(function(){
+           prelSite.style.set('display', 'none');
+           prelSite.classes.remove('sumir');
+           query('body').classes.remove('bloquear-scroll');
+           query('#inicio-centro').classes.add('aparecer');
+         }, 800);
+      }, 2000);
+    </script>

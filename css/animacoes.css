@@ -1,0 +1,190 @@
+@keyframes vindoDaEsquerda{
+  from{
+    transform: translateX(-100%);
+  }
+
+  to{
+    transform: translateX(0%);
+  }
+}
+
+@keyframes aparecerDeBaixo{
+  from{
+    transform: translateY(100%);
+  }
+
+  to{
+    transform: translateY(0%);
+  }
+}
+
+@keyframes vindoDaEsquerdaEsbarro{
+  0%{
+    transform: translateX(-100%);
+  }
+
+  20%{
+    transform: translateX(0%);
+  }
+
+  50%{
+    transform-origin: right;
+    transform: scaleX(0.3);
+
+  }
+
+  100%{
+    transform: scaleX(1);
+  }
+}
+
+@keyframes vindoDaDireita{
+  from{
+    transform: translateX(100%);
+  }
+
+  to{
+    transform: translateX(0%);
+  }
+}
+
+@keyframes girandoDaEsquerda{
+  from{
+    transform: translateX(-100%) rotate(720deg);
+  }
+
+  to{
+    transform: translateX(0%) rotate(0deg);
+  }
+}
+
+@keyframes cresceDiminui{
+  0%{
+    transform: scale(0);
+  }
+
+  65%{
+    transform: scale(1.2);
+  }
+
+  100%{
+    transform: scale(1);
+  }
+}
+
+@keyframes pulsoCoracao{
+  0%{
+    transform: scale(1.5);
+  }
+
+  12.5%{
+    transform: scale(1);
+  }
+
+  25%{
+    transform: scale(1.5);
+  }
+
+  50%{
+    transform: scale(1);
+  }
+}
+
+@keyframes apareceCima{
+  from{
+    transform: translateY(-100%);
+  }
+  to{
+    transform: translateY(0%);
+  }
+}
+
+@keyframes aumenta{
+  from{
+    transform: scale(0);
+  }
+  to{
+    transform: scale(1);
+  }
+}
+
+@keyframes apareceBaixo{
+  from{
+    transform: translateY(50%);
+    opacity: 0;
+  }
+  to{
+    transform: translateY(0%);
+    opacity: 1;
+  }
+}
+
+@keyframes girando{
+  from{
+    transform: rotate(0deg);
+  }
+  to{
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes treme{
+  15%{
+    transform: rotate(20deg);
+  }
+  30%{
+    transform: rotate(-20deg);
+  }
+  50%{
+    transform: rotate(20deg);
+  }
+  60%{
+    transform: rotate(-20deg);
+  }
+  70%{
+    transform: rotate(20deg);
+  }
+  80%{
+    transform: rotate(-20deg);
+  }
+  90%{
+    transform: rotate(20deg);
+  }
+  100%{
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes giraEPulsa{
+  0%{
+    transform: rotate(0deg) scale(1);
+  }
+
+  25%{
+    transform: rotate(90deg) scale(1.1);
+  }
+
+  50%{
+    transform: rotate(180deg) scale(1);
+  }
+
+  75%{
+    transform: rotate(270deg) scale(1.1);
+  }
+
+  100%{
+    transform: rotate(360deg) scale(1);
+  }
+}
+
+@keyframes apareceCrescendo {
+  from{
+    transform: scale(0);
+    opacity: 0;
+  }
+
+  to{
+    transform: scale(1);
+    opacity: 1;
+  }
+}
