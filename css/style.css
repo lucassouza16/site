@@ -34,6 +34,7 @@ body.bloquear-scroll{
   background-image: url('../img/mapa.png');
   background-size: cover;
   background-repeat: no-repeat;
+  background-position: center;
 }
 
 #tela-preload-site{
