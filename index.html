@@ -23,7 +23,7 @@
   <div id="tela-preload-site">
       <div class="centro">
          <svg viewBox="-120 -120 240 240">
-           <circle r="94" stroke-dasharray="118 29" class="externo"></circle>
+           <circle r="94" stroke-dasharray="236 59" class="externo"></circle>
            <circle r="80" stroke-dasharray="134 33" class="interno"></circle>
          </svg>
 
@@ -560,12 +560,12 @@ animacao-modal="aumenta" modal-bloqueia-scroll="true">
     <script type="text/javascript" src="js/form.js"></script>
     <script type="text/javascript" src="js/script.js"></script>
     <script type="text/javascript">
-     var prelSite = query('#tela-preload-site');
+     var preloadSite = query('#tela-preload-site');
       setTimeout(function(){
-         prelSite.classes.add('sumir');
+         preloadSite.classes.add('sumir');
          setTimeout(function(){
-           prelSite.style.set('display', 'none');
-           prelSite.classes.remove('sumir');
+           preloadSite.style.set('display', 'none');
+           preloadSite.classes.remove('sumir');
            query('body').classes.remove('bloquear-scroll');
            query('#inicio-centro').classes.add('aparecer');
          }, 800);
