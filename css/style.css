@@ -54,7 +54,7 @@ body.bloquear-scroll{
 }
 
 #tela-preload-site.sumir{
-  animation: apareceCima 800ms reverse;
+  animation: apareceCima 800ms reverse forwards;
 }
 
 #tela-preload-site .centro{
