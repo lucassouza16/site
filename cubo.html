@@ -22,6 +22,7 @@
 		perspective: 1000px;
 		-webkit-perspective: 1000px;
 		background: #191817;
+		overflow: hidden;
 	}
 
 	.botao-resolver{
@@ -37,11 +38,16 @@
 
 	.msg-cubo-resolvido{
 		position : fixed;
-		top : 10px;
-		right : 10px;
+		bottom : 10px;
+		left: 0;
+		right: 0;
+		width: 300px;
+		margin: auto;
 		font-size : 14pt;
 		font-family: sans-serif;
 		color: white;
+		max-width: 100%;
+		text-align: center;
 	}
 </style>
 </head>
@@ -108,7 +114,11 @@
 	}
 
 	window.ev = Element.prototype.ev = function(disp, fc){
-		this.addEventListener(disp, fc);
+		var calls = disp.split(' ');
+
+		for (var i = 0; i < calls.length; i++) {
+			this.addEventListener(calls[i], fc);
+		}
 	};
 
 	var rotSelo = 0;
@@ -131,13 +141,17 @@
 
 	atRotacaoCubo();
 
-	window.ev('mousedown', function(e){
+	var touchMove = null;
+
+	window.ev('mousedown touchstart', function(e){
+		
 		if(e.target === document.body){
+			if(e.changedTouches != undefined) touchMove = e.changedTouches[0];
 			movendo = true;
 		}
 	});
 
-	window.ev('mouseup', function(){
+	window.ev('mouseup touchend', function(){
 		movendo = false;
 	});
 
@@ -146,6 +160,16 @@
 			e.preventDefault();
 			rx += e.movementY/5;
 			ry += e.movementX/5;
+			atRotacaoCubo();
+		}
+	});
+
+	window.ev('touchmove', function(e){
+		if(movendo){
+			rx += (touchMove.clientY - e.changedTouches[0].clientY)/5;
+			ry -= (touchMove.clientX - e.changedTouches[0].clientX)/5;
+			touchMove = e.changedTouches[0];
+
 			atRotacaoCubo();
 		}
 	});
@@ -231,7 +255,7 @@
 			}
 		};
 
-		self.lados.esq.ev('mousedown', function(){
+		self.lados.esq.ev('mousedown touchstart', function(){
 			if(Cubo.arrastando == null){
 				Cubo.arrastando = {
 					'lado' : 'esq',
@@ -240,7 +264,7 @@
 			}
 		});
 
-		self.lados.dir.ev('mousedown', function(){
+		self.lados.dir.ev('mousedown touchstart', function(){
 			if(Cubo.arrastando == null){
 				Cubo.arrastando = {
 					'lado' : 'dir',
@@ -249,7 +273,7 @@
 			}
 		});
 
-		self.lados.cima.ev('mousedown', function(){
+		self.lados.cima.ev('mousedown touchstart', function(){
 			if(Cubo.arrastando == null){
 				Cubo.arrastando = {
 					'lado' : 'cima',
@@ -258,7 +282,7 @@
 			}
 		});
 
-		self.lados.baixo.ev('mousedown', function(){
+		self.lados.baixo.ev('mousedown touchstart', function(){
 			if(Cubo.arrastando == null){
 				Cubo.arrastando = {
 					'lado' : 'baixo',
@@ -267,7 +291,7 @@
 			}
 		});
 
-		self.lados.frente.ev('mousedown', function(){
+		self.lados.frente.ev('mousedown touchstart', function(){
 			if(Cubo.arrastando == null){
 				Cubo.arrastando = {
 					'lado' : 'frente',
@@ -276,90 +300,12 @@
 			}
 		});
 
-		self.lados.tras.ev('mousedown', function(){
+		self.lados.tras.ev('mousedown touchstart', function(){
 			if(Cubo.arrastando == null){
 				Cubo.arrastando = {
 					'lado' : 'tras',
 					'cubo' : self
 				};
-			}
-		});
-
-		self.lados.esq.ev('mousemove', function(e){
-			e.preventDefault();
-			if(Cubo.arrastando != null && Cubo.arrastando.lado == 'esq' && Cubo.arrastando.cubo !== self){
-				if(self.z == Cubo.arrastando.cubo.z){
-					Cubo.girar.z(!(self.y > Cubo.arrastando.cubo.y), self.z, true, verificarSucesso);
-				}else{
-					Cubo.girar.y(!(self.z > Cubo.arrastando.cubo.z), self.y, true, verificarSucesso);
-				}
-
-				Cubo.arrastando = null;
-			}
-		});
-
-		self.lados.dir.ev('mousemove', function(e){
-			e.preventDefault();
-			if(Cubo.arrastando != null && Cubo.arrastando.lado == 'dir' && Cubo.arrastando.cubo !== self){
-				if(self.z == Cubo.arrastando.cubo.z){
-					Cubo.girar.z(self.y > Cubo.arrastando.cubo.y, self.z, true, verificarSucesso);
-				}else{
-					Cubo.girar.y(self.z > Cubo.arrastando.cubo.z, self.y, true, verificarSucesso);
-				}
-
-				Cubo.arrastando = null;
-			}
-		});
-
-		self.lados.cima.ev('mousemove', function(e){
-			e.preventDefault();
-			if(Cubo.arrastando != null && Cubo.arrastando.lado == 'cima' && Cubo.arrastando.cubo !== self){
-				if(self.x == Cubo.arrastando.cubo.x){
-					Cubo.girar.x(self.z > Cubo.arrastando.cubo.z, self.x, true, verificarSucesso);
-				}else{
-					Cubo.girar.z(self.x > Cubo.arrastando.cubo.x, self.z, true, verificarSucesso);
-				}
-
-				Cubo.arrastando = null;
-			}
-		});
-
-		self.lados.baixo.ev('mousemove', function(e){
-			e.preventDefault();
-			if(Cubo.arrastando != null && Cubo.arrastando.lado == 'baixo' && Cubo.arrastando.cubo !== self){
-				if(self.x == Cubo.arrastando.cubo.x){
-					Cubo.girar.x(!(self.z > Cubo.arrastando.cubo.z), self.x, true, verificarSucesso);
-				}else{
-					Cubo.girar.z(!(self.x > Cubo.arrastando.cubo.x), self.z, true, verificarSucesso);
-				}
-
-				Cubo.arrastando = null;
-			}
-		});
-
-		self.lados.frente.ev('mousemove', function(e){
-			e.preventDefault();
-			if(Cubo.arrastando != null && Cubo.arrastando.lado == 'frente' && Cubo.arrastando.cubo !== self){
-				if(self.x == Cubo.arrastando.cubo.x){
-					Cubo.girar.x(self.y > Cubo.arrastando.cubo.y, self.x, true, verificarSucesso);
-				}else{
-					Cubo.girar.y(!(self.x > Cubo.arrastando.cubo.x), self.y, true, verificarSucesso);
-				}
-
-				Cubo.arrastando = null;
-			}
-		});
-
-		self.lados.tras.ev('mousemove', function(e){
-			e.preventDefault();
-			if(Cubo.arrastando != null && Cubo.arrastando.lado == 'tras' && Cubo.arrastando.cubo !== self){
-				if(self.x == Cubo.arrastando.cubo.x){
-					Cubo.girar.x(!(self.y > Cubo.arrastando.cubo.y), self.x, true, verificarSucesso);
-				}else{
-					Cubo.girar.y(self.x > Cubo.arrastando.cubo.x, self.y, true, verificarSucesso);
-				}
-
-				Cubo.arrastando = null;
 			}
 		});
 
@@ -527,7 +473,7 @@
 	Cubo.animando = false;
 	Cubo.dimensao = 3;
 	if(Cubo.dimensao%2 == 0) Cubo.dimensao++;
-	Cubo.tamCubo = 100;
+	Cubo.tamCubo = window.innerWidth > 500 ? 100 : 60;
 	Cubo.velocAnim = 100;
 	Cubo.dimCentro = (Cubo.dimensao-1)/2;
 
@@ -547,7 +493,95 @@
 		return ret;
 	};
 
-	window.ev('mouseup', function(){Cubo.arrastando = null;});
+	window.ev('mouseup touchend', function(){Cubo.arrastando = null;});
+
+	window.ev('touchmove mousemove', function(e){
+		if(Cubo.arrastando != null){
+			var touch = e.changedTouches != undefined ? e.changedTouches[0] : e;
+			var target = document.elementFromPoint(touch.clientX, touch.clientY);
+
+			switch(Cubo.arrastando.lado){
+				case 'dir':
+				var cubo = Cubo.lista.find(c => c.lados.dir.contains(target) && c != Cubo.arrastando.cubo);
+
+				if(cubo != undefined){
+
+					if(cubo.z == Cubo.arrastando.cubo.z){
+						Cubo.girar.z(cubo.y > Cubo.arrastando.cubo.y, cubo.z, true, verificarSucesso);
+					}else{
+						Cubo.girar.y(cubo.z > Cubo.arrastando.cubo.z, cubo.y, true, verificarSucesso);
+					}
+
+					Cubo.arrastando = null;
+				}
+				break;
+				case 'esq':
+				var cubo = Cubo.lista.find(c => c.lados.esq.contains(target) && c != Cubo.arrastando.cubo);
+
+				if(cubo != undefined){
+					if(cubo.z == Cubo.arrastando.cubo.z){
+						Cubo.girar.z(!(cubo.y > Cubo.arrastando.cubo.y), cubo.z, true, verificarSucesso);
+					}else{
+						Cubo.girar.y(!(cubo.z > Cubo.arrastando.cubo.z), cubo.y, true, verificarSucesso);
+					}
+
+					Cubo.arrastando = null;
+				}
+				break;
+				case 'cima':
+				var cubo = Cubo.lista.find(c => c.lados.cima.contains(target) && c != Cubo.arrastando.cubo);
+
+				if(cubo != undefined){
+					if(cubo.x == Cubo.arrastando.cubo.x){
+						Cubo.girar.x(cubo.z > Cubo.arrastando.cubo.z, cubo.x, true, verificarSucesso);
+					}else{
+						Cubo.girar.z(cubo.x > Cubo.arrastando.cubo.x, cubo.z, true, verificarSucesso);
+					}
+
+					Cubo.arrastando = null;
+				}
+				break;
+				case 'baixo':
+				var cubo = Cubo.lista.find(c => c.lados.baixo.contains(target) && c != Cubo.arrastando.cubo);
+
+				if(cubo != undefined){
+					if(cubo.x == Cubo.arrastando.cubo.x){
+						Cubo.girar.x(!(cubo.z > Cubo.arrastando.cubo.z), cubo.x, true, verificarSucesso);
+					}else{
+						Cubo.girar.z(!(cubo.x > Cubo.arrastando.cubo.x), cubo.z, true, verificarSucesso);
+					}
+
+					Cubo.arrastando = null;
+				}
+				break;
+				case 'frente':
+				var cubo = Cubo.lista.find(c => c.lados.frente.contains(target) && c != Cubo.arrastando.cubo);
+
+				if(cubo != undefined){
+					if(cubo.x == Cubo.arrastando.cubo.x){
+						Cubo.girar.x(cubo.y > Cubo.arrastando.cubo.y, cubo.x, true, verificarSucesso);
+					}else{
+						Cubo.girar.y(!(cubo.x > Cubo.arrastando.cubo.x), cubo.y, true, verificarSucesso);
+					}
+
+					Cubo.arrastando = null;
+				}
+				break;case 'tras':
+				var cubo = Cubo.lista.find(c => c.lados.tras.contains(target) && c != Cubo.arrastando.cubo);
+
+				if(cubo != undefined){
+					if(cubo.x == Cubo.arrastando.cubo.x){
+						Cubo.girar.x(!(cubo.y > Cubo.arrastando.cubo.y), cubo.x, true, verificarSucesso);
+					}else{
+						Cubo.girar.y(cubo.x > Cubo.arrastando.cubo.x, cubo.y, true, verificarSucesso);
+					}
+
+					Cubo.arrastando = null;
+				}
+				break;
+			}
+		}
+	});
 
 	for (var cx = 0; cx < Cubo.dimensao; cx++) {
 		var xpos = cx-Cubo.dimCentro;
@@ -580,7 +614,7 @@
 						'height' : (Cubo.tamCubo*Cubo.dimensao)+'px',
 						'left' : '-'+(Cubo.tamCubo*(Cubo.dimensao-1-cz))+'px',
 						'top' : '-'+(Cubo.tamCubo*cy)+'px',
-						'font-size' : '55pt',
+						'font-size' : window.innerWidth > 500 ? '56pt' : '33pt',
 						'font-family' : 'cursive',
 						'transform' : 'rotate(45deg)',
 						'transform-origin' : 'center center',
@@ -593,6 +627,8 @@
 						'margin-top' : '-10px',
 						'backface-visibility' : 'hidden'
 					});
+
+					legenda.ondragstart = () => false;
 					legenda.textContent = 'Lucas Souza';
 				}
 
@@ -610,6 +646,7 @@
 						'overflow' : 'hidden'
 					});
 					var selo = cb.cores.frente.cr('img');
+					selo.ondragstart = () => false;
 					selo.setAttribute('src', 'http://lucassouzadeveloper.esy.es/img/logo.png');
 					selo.st({
 						'width' : (Cubo.tamCubo*Cubo.dimensao)+'px',
@@ -660,6 +697,8 @@ function verificarSucesso(){
 		verificarLado(cbsTras, 'tras')){
 		Cubo.movimentos = [];
 	msgSucesso.textContent = 'Parabéns, você conseguiu resolver o cubo';
+}else{
+	msgSucesso.textContent = '';
 }
 }
 
