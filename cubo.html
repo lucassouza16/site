@@ -255,8 +255,9 @@
 			}
 		};
 
-		self.lados.esq.ev('mousedown touchstart', function(){
+		self.lados.esq.ev('mousedown touchstart', function(e){
 			if(Cubo.arrastando == null){
+				e.preventDefault();
 				Cubo.arrastando = {
 					'lado' : 'esq',
 					'cubo' : self
@@ -264,8 +265,9 @@
 			}
 		});
 
-		self.lados.dir.ev('mousedown touchstart', function(){
+		self.lados.dir.ev('mousedown touchstart', function(e){
 			if(Cubo.arrastando == null){
+				e.preventDefault();
 				Cubo.arrastando = {
 					'lado' : 'dir',
 					'cubo' : self
@@ -273,8 +275,9 @@
 			}
 		});
 
-		self.lados.cima.ev('mousedown touchstart', function(){
+		self.lados.cima.ev('mousedown touchstart', function(e){
 			if(Cubo.arrastando == null){
+				e.preventDefault();
 				Cubo.arrastando = {
 					'lado' : 'cima',
 					'cubo' : self
@@ -282,8 +285,9 @@
 			}
 		});
 
-		self.lados.baixo.ev('mousedown touchstart', function(){
+		self.lados.baixo.ev('mousedown touchstart', function(e){
 			if(Cubo.arrastando == null){
+				e.preventDefault();
 				Cubo.arrastando = {
 					'lado' : 'baixo',
 					'cubo' : self
@@ -291,8 +295,9 @@
 			}
 		});
 
-		self.lados.frente.ev('mousedown touchstart', function(){
+		self.lados.frente.ev('mousedown touchstart', function(e){
 			if(Cubo.arrastando == null){
+				e.preventDefault();
 				Cubo.arrastando = {
 					'lado' : 'frente',
 					'cubo' : self
@@ -300,8 +305,9 @@
 			}
 		});
 
-		self.lados.tras.ev('mousedown touchstart', function(){
+		self.lados.tras.ev('mousedown touchstart', function(e){
 			if(Cubo.arrastando == null){
+				e.preventDefault();
 				Cubo.arrastando = {
 					'lado' : 'tras',
 					'cubo' : self
@@ -515,6 +521,7 @@
 					Cubo.arrastando = null;
 				}
 				break;
+
 				case 'esq':
 				var cubo = Cubo.lista.find(c => c.lados.esq.contains(target) && c != Cubo.arrastando.cubo);
 
@@ -528,6 +535,7 @@
 					Cubo.arrastando = null;
 				}
 				break;
+
 				case 'cima':
 				var cubo = Cubo.lista.find(c => c.lados.cima.contains(target) && c != Cubo.arrastando.cubo);
 
@@ -541,6 +549,7 @@
 					Cubo.arrastando = null;
 				}
 				break;
+
 				case 'baixo':
 				var cubo = Cubo.lista.find(c => c.lados.baixo.contains(target) && c != Cubo.arrastando.cubo);
 
@@ -554,6 +563,7 @@
 					Cubo.arrastando = null;
 				}
 				break;
+
 				case 'frente':
 				var cubo = Cubo.lista.find(c => c.lados.frente.contains(target) && c != Cubo.arrastando.cubo);
 
@@ -566,7 +576,9 @@
 
 					Cubo.arrastando = null;
 				}
-				break;case 'tras':
+				break;
+
+				case 'tras':
 				var cubo = Cubo.lista.find(c => c.lados.tras.contains(target) && c != Cubo.arrastando.cubo);
 
 				if(cubo != undefined){
@@ -628,7 +640,7 @@
 						'backface-visibility' : 'hidden'
 					});
 
-					legenda.ondragstart = () => false;
+					legenda.ondragstart = (e) => e.preventDefault();
 					legenda.textContent = 'Lucas Souza';
 				}
 
@@ -646,7 +658,7 @@
 						'overflow' : 'hidden'
 					});
 					var selo = cb.cores.frente.cr('img');
-					selo.ondragstart = () => false;
+					selo.ondragstart = (e) => e.preventDefault();
 					selo.setAttribute('src', 'img/logo.png');
 					selo.st({
 						'width' : (Cubo.tamCubo*Cubo.dimensao)+'px',
