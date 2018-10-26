@@ -158,8 +158,8 @@
 	window.ev('mousemove', function(e){
 		if(movendo){
 			e.preventDefault();
-			rx += e.movementY/5;
-			ry -= e.movementX/5;
+			rx -= e.movementY/5;
+			ry += e.movementX/5;
 			atRotacaoCubo();
 		}
 	});
