@@ -159,7 +159,7 @@
 		if(movendo){
 			e.preventDefault();
 			rx += e.movementY/5;
-			ry += e.movementX/5;
+			ry -= e.movementX/5;
 			atRotacaoCubo();
 		}
 	});
