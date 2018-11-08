@@ -568,7 +568,6 @@
 						'height' : (Cubo.tamCubo*Cubo.dimensao)+'px',
 						'left' : '-'+(Cubo.tamCubo*(Cubo.dimensao-1-cz))+'px',
 						'top' : '-'+(Cubo.tamCubo*cy)+'px',
-						'user-select' : 'none',
 						'display' : 'flex',
 						'backface-visibility' : 'hidden'
 					});
@@ -597,7 +596,6 @@
 						'height' : (Cubo.tamCubo*Cubo.dimensao)+'px',
 						'left' : '-'+(Cubo.tamCubo*cx)+'px',
 						'top' : '-'+(Cubo.tamCubo*cy)+'px',
-						'user-select' : 'none',
 						'backface-visibility' : 'hidden'
 					});
 				}
