@@ -86,7 +86,7 @@
 	var touchMove = null;
 
 	window.ev('mousedown touchstart', function(e){
-		
+
 		if(e.target === document.body){
 			if(e.changedTouches != undefined) touchMove = e.changedTouches[0];
 			movendo = true;
@@ -563,27 +563,17 @@
 						'overflow' : 'hidden'
 					});
 
-					var legenda = cb.cores.dir.cr('div').st({
+					var legenda = cb.cores.dir.cr('img').st({
 						'width' : (Cubo.tamCubo*Cubo.dimensao)+'px',
 						'height' : (Cubo.tamCubo*Cubo.dimensao)+'px',
 						'left' : '-'+(Cubo.tamCubo*(Cubo.dimensao-1-cz))+'px',
 						'top' : '-'+(Cubo.tamCubo*cy)+'px',
-						'font-size' : window.innerWidth > 500 ? '56pt' : '33pt',
-						'font-family' : 'cursive',
-						'transform' : 'rotate(45deg)',
-						'transform-origin' : 'center center',
 						'user-select' : 'none',
 						'display' : 'flex',
-						'justify-content' : 'center',
-						'align-items' : 'center',
-						'text-align' : 'center',
-						'color' : 'white',
-						'margin-top' : '-10px',
 						'backface-visibility' : 'hidden'
 					});
-
+          legenda.setAttribute('src', 'img/rubrica.png');
 					legenda.ondragstart = (e) => e.preventDefault();
-					legenda.textContent = 'Lucas Souza';
 				}
 
 				if(ypos == -1*Cubo.dimCentro){
