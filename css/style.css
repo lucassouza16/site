@@ -1313,7 +1313,8 @@ body.modal-bloqueia-scroll{
 
 /*Menor que 650px*/
 @media screen and (max-width: 650px){
-  #modal-detalhes-item-portifolio .container-linguagens{
+  #modal-detalhes-item-portifolio .container-dados-item-portifolio,
+  #modal-detalhes-item-portifolio h1.titulo-item-portifolio{
     text-align: center;
   }
 
