@@ -3,11 +3,7 @@ var menuTopo = query('#menu-principal');
 var btnAbreMenu = query('#abrir-menu');
 var btnSubirPagina = query('#subir-para-cima');
 var menuNavDrop = modal('#menu-nav-dropdown');
-var modalDetPortf = modal('#modal-detalhes-item-portifolio');
-var dscModalPortif = modalDetPortf.dom.query('p.descricao-item-portifolio');
-var tituloModalPortif = modalDetPortf.dom.query('h1.titulo-item-portifolio');
-var imgModalPortif = modalDetPortf.dom.query('img.imagem-item-portifolio');
-var linkModalPortif = modalDetPortf.dom.query('a.link-ir-para-site');
+var modalDetPortf = new ModalPortifolio('#modal-detalhes-item-portifolio', '.item-portifolio');
 var graficos = query('.grafico-pizza');
 
 botsScrollEl.event.add('click', function(e){
@@ -89,34 +85,6 @@ menuNavDrop.onopen = function(){
 menuNavDrop.onclose = function(){
 	btnAbreMenu.classes.remove('aberto');
 };
-
-query('.item-portifolio').event.add('click', function(){
-	var self = query(this);
-	var titItemPort = self.query('.titulo-item-portifolio').inner.html();
-	var descItemPort = self.query('.descricao-item-portifolio').inner.html();
-	var imgPort = self.query('.img-portifolio').attrb.get('src');
-	var linkPort = self.query('.link-endereco-item-portifolio');
-
-	if(linkPort.size() == 0){
-		linkPort = '';
-	}else{
-		linkPort = linkPort.attrb.get('href');
-	}
-
-	tituloModalPortif.inner.html(titItemPort);
-	dscModalPortif.inner.html(descItemPort);
-	imgModalPortif.attrb.set('src', imgPort);
-
-	if(linkPort ==  ''){
-		linkModalPortif.style.set('display', 'none');
-	}else{
-		linkModalPortif.style.set('display', 'block');
-	}
-
-	linkModalPortif.attrb.set('href', linkPort);
-
-	modalDetPortf.open();
-});
 
 graficos.fulleach(function(item){
 	var pct = item.attrb.get('porcento');

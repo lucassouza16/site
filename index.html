@@ -19,16 +19,16 @@
   <link rel="stylesheet" href="awesome/css/font-awesome.min.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro">
 </head>
-<body class="bloquear-scroll">
+<body cslass="bloquear-scroll">
   <div id="tela-preload-site">
-      <div class="centro">
-         <svg viewBox="-120 -120 240 240">
-           <circle r="94" stroke-dasharray="236 59" class="externo"></circle>
-           <circle r="80" stroke-dasharray="134 33" class="interno"></circle>
-         </svg>
+    <div class="centro">
+      <svg viewBox="-120 -120 240 240">
+        <circle r="94" stroke-dasharray="236 59" class="externo"></circle>
+        <circle r="80" stroke-dasharray="134 33" class="interno"></circle>
+      </svg>
 
-         <img src="img/logo_2.png" alt="Logo Site">
-      </div>
+      <img src="img/logo_2.png" alt="Logo Site">
+    </div>
   </div>
   <div class="botoes-fixo esquerda topo">
     <a href="http://www.youtube.com/" target="_blank" class="botao-item color-youtube" title="YouTube">
@@ -125,11 +125,11 @@ animacao-modal="aumenta" modal-bloqueia-scroll="true">
   </div>
   <div class="coluna seis">
     <h1 class="titulo titulo-item-portifolio"></h1>
-    <a target="_blank" href="" class="link-ir-para-site link-destaque"><span class="fa fa-globe"></span>
-      Você pode ter acesso a este projeto por aqui</a>
-      <p class="descricao-item-portifolio"></p>
+    <div class="container-dados-item-portifolio">
+
     </div>
   </div>
+</div>
 </div>
 
 <div id="sessao-inicio" class="sessao-pagina centraliza-flex">
@@ -390,10 +390,13 @@ animacao-modal="aumenta" modal-bloqueia-scroll="true">
               <div class="grafico-pizza" porcento="65" titulo="SQL"></div>
             </div>
             <div class="coluna tres anima-scroll-item" animacao="cresceDiminui" duracao="700">
-              <div class="grafico-pizza" porcento="65" titulo="Java"></div>
+              <div class="grafico-pizza" porcento="70" titulo="Java"></div>
             </div>
             <div class="coluna tres anima-scroll-item" animacao="cresceDiminui" duracao="800">
-              <div class="grafico-pizza" porcento="35" titulo="ASP.NET"></div>
+              <div class="grafico-pizza" porcento="40" titulo="ASP.NET"></div>
+            </div>
+            <div class="coluna tres anima-scroll-item" animacao="cresceDiminui" duracao="900">
+              <div class="grafico-pizza" porcento="40" titulo="Android"></div>
             </div>
           </div>
         </div>
@@ -423,12 +426,20 @@ animacao-modal="aumenta" modal-bloqueia-scroll="true">
                   </div>
                 </div>
               </div>
-              <p class="descricao-item-portifolio">
-                O PlayFunny é um jogo empresarial que simula o cenário de uma fábrica de
-                cadernos, ele foi desenvolvido com o objetivo de ensinar ao jogador um pouco
-                de como se gerencia uma fábrica real, fazendo gastos, investimentos e
-                acumulando dívidas e também como obter lucro.
-              </p>
+              <div class="conteudo-portifolio-hidden">
+                <div class="container-linguagens">
+                  <span>HTML</span>
+                  <span>CSS</span>
+                  <span>Javascript</span>
+                  <span>JQuery</span>
+                </div>
+                <p class="descricao-item-portifolio">
+                  O PlayFunny é um jogo empresarial que simula o cenário de uma fábrica de
+                  cadernos, ele foi desenvolvido com o objetivo de ensinar ao jogador um pouco
+                  de como se gerencia uma fábrica real, fazendo gastos, investimentos e
+                  acumulando dívidas e também como obter lucro.
+                </p>
+              </div>
             </div>
           </div>
           <div class="coluna tres anima-scroll-item" animacao="vindoDaEsquerda" duracao="1300">
@@ -445,12 +456,24 @@ animacao-modal="aumenta" modal-bloqueia-scroll="true">
                   </div>
                 </div>
               </div>
-              <p class="descricao-item-portifolio">
-                Esse sistema foi construído para realizar o controle dos equipamentos utilizados
-                pelos professores na faculdade Vale do Salgado, ele permite realizar previamente
-                a reserva do equipamento e relatar problemas ou defeitos que eles podem vir a sofrer.
-              </p>
-              <a href="http://nexasfvs.com.br/dti/" class="link-endereco-item-portifolio"></a>
+              <div class="conteudo-portifolio-hidden">
+                <div class="container-linguagens">
+                  <span>HTML</span>
+                  <span>CSS</span>
+                  <span>Javascript</span>
+                  <span>JQuery</span>
+                  <span>Bootstrap</span>
+                  <span>PHP</span>
+                </div>
+                <a target="_blank" href="http://nexasfvs.com.br/dti/"
+                class="link-ir-para-site link-destaque"><span class="fa fa-globe"></span>
+                Você pode ter acesso a este projeto por aqui</a>
+                <p class="descricao-item-portifolio">
+                  Esse sistema foi construído para realizar o controle dos equipamentos utilizados
+                  pelos professores na faculdade Vale do Salgado, ele permite realizar previamente
+                  a reserva do equipamento e relatar problemas ou defeitos que eles podem vir a sofrer.
+                </p>
+              </div>
             </div>
           </div>
           <div class="coluna tres anima-scroll-item" animacao="vindoDaEsquerda" duracao="1200">
@@ -467,13 +490,22 @@ animacao-modal="aumenta" modal-bloqueia-scroll="true">
                   </div>
                 </div>
               </div>
-              <p class="descricao-item-portifolio">
-                Página desenvolvida para divulgar o evento anual que ocorre na Faculdade
-                Vale do Salgado, que tem como objetivo contribuir para o enriquecimento
-                da ciência regional, por meio do incentivo a pesquisa e a inovação,
-                promovendo o diálogo entre academia e a sociedade.
-              </p>
-              <a href="http://nexasfvs.com.br/simpoc/" class="link-endereco-item-portifolio"></a>
+              <div class="conteudo-portifolio-hidden">
+                <div class="container-linguagens">
+                  <span>HTML</span>
+                  <span>CSS</span>
+                  <span>Javascript</span>
+                </div>
+                <a target="_blank" href="http://nexasfvs.com.br/simpoc/"
+                class="link-ir-para-site link-destaque"><span class="fa fa-globe"></span>
+                Você pode ter acesso a este projeto por aqui</a>
+                <p class="descricao-item-portifolio">
+                  Página desenvolvida para divulgar o evento anual que ocorre na Faculdade
+                  Vale do Salgado, que tem como objetivo contribuir para o enriquecimento
+                  da ciência regional, por meio do incentivo a pesquisa e a inovação,
+                  promovendo o diálogo entre academia e a sociedade.
+                </p>
+              </div>
             </div>
           </div>
           <div class="coluna tres anima-scroll-item" animacao="vindoDaEsquerda" duracao="1000">
@@ -490,13 +522,23 @@ animacao-modal="aumenta" modal-bloqueia-scroll="true">
                   </div>
                 </div>
               </div>
-              <p class="descricao-item-portifolio">
-                O Mural do Nexas é uma plataforma voltada para a catalogação dos alunos
-                que cursaram ou ainda cursam análise e desenvolvimento de sistemas na
-                Faculdade Vale do Salgado, lá você pode encontrar informações sobre o
-                aluno relacionadas ao âmbito acadêmico.
-              </p>
-              <a href="http://nexasfvs.com.br/mural/" class="link-endereco-item-portifolio"></a>
+              <div class="conteudo-portifolio-hidden">
+                <div class="container-linguagens">
+                  <span>HTML</span>
+                  <span>CSS</span>
+                  <span>Javascript</span>
+                  <span>PHP</span>
+                </div>
+                <a target="_blank" href="http://nexasfvs.com.br/mural/"
+                class="link-ir-para-site link-destaque"><span class="fa fa-globe"></span>
+                Você pode ter acesso a este projeto por aqui</a>
+                <p class="descricao-item-portifolio">
+                  O Mural do Nexas é uma plataforma voltada para a catalogação dos alunos
+                  que cursaram ou ainda cursam análise e desenvolvimento de sistemas na
+                  Faculdade Vale do Salgado, lá você pode encontrar informações sobre o
+                  aluno relacionadas ao âmbito acadêmico.
+                </p>
+              </div>
             </div>
           </div>
         </div>
@@ -515,18 +557,27 @@ animacao-modal="aumenta" modal-bloqueia-scroll="true">
                   </div>
                 </div>
               </div>
-              <p class="descricao-item-portifolio">
-                Este código foi desenvolvido em um tempo livre com o objetivo 
-                de exercitar meu javascript, é um jogo que simula um cubo mágico, onde você pode
-                treinar suas habilidades mesmo que não tenha o jogo real, ele reúne conceitos 
-                de interação com o usuário através de eventos, somado ao uso das propriedades 
-                transform do CSS3.
-                <br><br>
-                Instruções: Toque na área escura do fundo e arraste para girar o cubo em uma perspectiva 3D,
-                e para girar as faces toque e arraste uma peça no sentido que desejar girá-lo, e para 
-                restaurar a configuração original das peças clique no botão resolver.
-              </p>
-              <a href="cubo.html" class="link-endereco-item-portifolio"></a>
+              <div class="conteudo-portifolio-hidden">
+                <div class="container-linguagens">
+                  <span>HTML</span>
+                  <span>CSS</span>
+                  <span>Javascript</span>
+                </div>
+                <a target="_blank" href="cubo.html"
+                class="link-ir-para-site link-destaque"><span class="fa fa-globe"></span>
+                Você pode ter acesso a este projeto por aqui</a>
+                <p class="descricao-item-portifolio">
+                  Este código foi desenvolvido em um tempo livre com o objetivo
+                  de exercitar meu javascript, é um jogo que simula um cubo mágico, onde você pode
+                  treinar suas habilidades mesmo que não tenha o jogo real, ele reúne conceitos
+                  de interação com o usuário através de eventos, somado ao uso das propriedades
+                  transform do CSS3.
+                  <br><br>
+                  Instruções: Toque na área escura do fundo e arraste para girar o cubo em uma perspectiva 3D,
+                  e para girar as faces toque e arraste uma peça no sentido que desejar girá-lo, e para
+                  restaurar a configuração original das peças clique no botão resolver.
+                </p>
+              </div>
             </div>
           </div>
           <div class="coluna tres anima-scroll-item" animacao="vindoDaEsquerda" duracao="1300">
@@ -543,14 +594,21 @@ animacao-modal="aumenta" modal-bloqueia-scroll="true">
                   </div>
                 </div>
               </div>
-              <p class="descricao-item-portifolio">
-                Este código foi desenvolvido com o objetivo de realizar a comunicação com
-                um robô desenvolvido por mim, ele envia comandos ao protótipo como a direção
-                que ele deve seguir e também habilita o modo automático que faz com que o
-                dispositivo se esquive de obstáculos, e também recebe dados como distância
-                do obstáculo mais próximo, direção do protótipo e velocidade, e oferece uma
-                perspectiva em 3D do estado físico do robô.
-              </p>
+              <div class="conteudo-portifolio-hidden">
+                <div class="container-linguagens">
+                  <span>HTML</span>
+                  <span>CSS</span>
+                  <span>Javascript</span>
+                </div>
+                <p class="descricao-item-portifolio">
+                  Este código foi desenvolvido com o objetivo de realizar a comunicação com
+                  um robô desenvolvido por mim, ele envia comandos ao protótipo como a direção
+                  que ele deve seguir e também habilita o modo automático que faz com que o
+                  dispositivo se esquive de obstáculos, e também recebe dados como distância
+                  do obstáculo mais próximo, direção do protótipo e velocidade, e oferece uma
+                  perspectiva em 3D do estado físico do robô.
+                </p>
+              </div>
             </div>
           </div>
         </div>
@@ -611,15 +669,16 @@ animacao-modal="aumenta" modal-bloqueia-scroll="true">
     </html>
     <script type="text/javascript" src="js/manipulador.js"></script>
     <script type="text/javascript" src="js/modal.js"></script>
+    <script type="text/javascript" src="js/modal-portifolio.js"></script>
     <script type="text/javascript" src="js/script.js"></script>
     <script type="text/javascript">
-     var preloadSite = query('#tela-preload-site');
+    var preloadSite = query('#tela-preload-site');
+    setTimeout(function(){
+      preloadSite.classes.add('sumir');
       setTimeout(function(){
-         preloadSite.classes.add('sumir');
-         setTimeout(function(){
-           preloadSite.style.set('display', 'none');
-           query('body').classes.remove('bloquear-scroll');
-           query('#inicio-centro').classes.add('aparecer');
-         }, 800);
-      }, 2000);
+        preloadSite.style.set('display', 'none');
+        query('body').classes.remove('bloquear-scroll');
+        query('#inicio-centro').classes.add('aparecer');
+      }, 800);
+    }, 2000);
     </script>

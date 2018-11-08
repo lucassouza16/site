@@ -818,8 +818,7 @@ body.modal-bloqueia-scroll{
   transform: rotateX(180deg);
 }
 
-.item-portifolio .descricao-item-portifolio,
-.item-portifolio .link-endereco-item-portifolio{
+.item-portifolio .conteudo-portifolio-hidden{
   display: none;
 }
 
@@ -833,10 +832,22 @@ body.modal-bloqueia-scroll{
   z-index: 600;
   animation-duration: 800ms;
   animation-fill-mode: forwards;
-  padding: 25px 30px;
   box-sizing: border-box;
-  overflow-y: auto;
   display: none;
+  padding: 25px 30px 50px 30px;
+  overflow-y: auto;
+}
+
+#modal-detalhes-item-portifolio .container-linguagens{
+  margin-bottom: 20px;
+}
+
+#modal-detalhes-item-portifolio .container-linguagens span{
+  background: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  margin: 3px;
+  display: inline-block;
 }
 
 #modal-detalhes-item-portifolio .btn-fecha-modal{
@@ -1302,6 +1313,10 @@ body.modal-bloqueia-scroll{
 
 /*Menor que 650px*/
 @media screen and (max-width: 650px){
+  #modal-detalhes-item-portifolio .container-linguagens{
+    text-align: center;
+  }
+
   #modal-status-mensagem-enviada{
     left: 0;
     top: 0;
