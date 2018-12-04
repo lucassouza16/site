@@ -1215,7 +1215,7 @@ body.modal-bloqueia-scroll{
 
 .grafico-pizza svg text{
   fill: #423f3f;
-};
+}
 
 /*Maior que 1200px*/
 @media screen and (min-width: 1200px){
