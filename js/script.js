@@ -30,7 +30,7 @@ query(window).event.add('resize', function(){
 });
 
 function animScroll(){
-	var tScrollTop = query(this).scroll.top();
+	var tScrollTop = qDoc.scroll.top();
 
 	if(window.innerWidth > 900){
 		var pctInicioVisivel = tScrollTop/sessaoIni.offset.height();
