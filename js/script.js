@@ -23,15 +23,13 @@ var animaItems = query('.anima-scroll-item');
 
 var timeAnim = null;
 
-if(window.innerWidth > 900) animaItems.style.set('opacity' , '0');
-
 query(window).event.add('resize', function(){
 	if(window.innerWidth <= 900){
 		animaItems.style.set('opacity' , '1');
 	}
 });
 
-qDoc.event.add('scroll', function(){
+function animScroll(){
 	var tScrollTop = query(this).scroll.top();
 
 	if(window.innerWidth > 900){
@@ -81,7 +79,11 @@ qDoc.event.add('scroll', function(){
 			}
 		});
 	}, 150);
-});
+}
+
+if(window.innerWidth > 900) animScroll();
+
+qDoc.event.add('scroll', animScroll);
 
 animaItems.fulleach(function(item){
 
