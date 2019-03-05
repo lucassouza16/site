@@ -31,10 +31,31 @@ body.bloquear-scroll{
   padding: 16px;
   box-sizing: border-box;
   position: relative;
-  background-image: url('../img/mapa.png');
+  /*background-image: url('../img/mapa.png');
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: center;
+  background-position: center;*/
+}
+
+#sessao-inicio .svg-mapa{
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+}
+
+#sessao-inicio .svg-mapa path{
+  stroke-width: 2px;
+  fill: white;
+  stroke: white;
+  opacity: 0.1;
+  transition: fill 200ms ease;
+}
+
+#sessao-inicio .svg-mapa path.path-brasil{
+  opacity: 0.2;
 }
 
 #tela-preload-site{
@@ -1236,6 +1257,10 @@ body.modal-bloqueia-scroll{
 
   .modal-caixa-form{
     margin: 0 0 0 15px;
+  }
+
+  #sessao-inicio .svg-mapa.ativo path{
+    fill: transparent;
   }
 }
 

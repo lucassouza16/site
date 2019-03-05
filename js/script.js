@@ -5,12 +5,17 @@ var btnSubirPagina = query('#subir-para-cima');
 var menuNavDrop = modal('#menu-nav-dropdown');
 var modalDetPortf = new ModalPortifolio('#modal-detalhes-item-portifolio', '.item-portifolio');
 var graficos = query('.grafico-pizza');
+var sessaoIni = query('#sessao-inicio');
+var qDoc = query(document);
+var svgMapa = sessaoIni.query('.svg-mapa');
+
+if(qDoc.scroll.top() > 0) svgMapa.classes.add('ativo');
 
 botsScrollEl.event.add('click', function(e){
 	var alvo = query(this).attrb.get('href');
 	var pos = query(alvo).offset.top();
 
-	query(document).scroll.to(pos, 1000);
+	qDoc.scroll.to(pos, 1000);
 	query.event.prevent(e);
 });
 
@@ -26,13 +31,26 @@ query(window).event.add('resize', function(){
 	}
 });
 
-query(document).event.add('scroll', function(){
+qDoc.event.add('scroll', function(){
 	var tScrollTop = query(this).scroll.top();
+
+	if(window.innerWidth > 900){
+		var pctInicioVisivel = tScrollTop/sessaoIni.offset.height();
+		if(pctInicioVisivel > 1) pctInicioVisivel = 1;
+		pctInicioVisivel = 1 - pctInicioVisivel;
+
+		sessaoIni.query('.svg-mapa path').fulleach((e) => {
+			var totalLgh = e.nodes[0].getTotalLength();
+			e.attrb.set('stroke-dasharray', (pctInicioVisivel*totalLgh)+' '+totalLgh);
+		});
+	}
 
 	if(tScrollTop == 0){
 		btnSubirPagina.classes.add('inacessivel');
+		svgMapa.classes.remove('ativo');
 	}else{
 		btnSubirPagina.classes.remove('inacessivel');
+		svgMapa.classes.add('ativo');
 	}
 
 	if(!menuTopo.scroll.visible()){
@@ -75,7 +93,7 @@ animaItems.fulleach(function(item){
 });
 
 btnSubirPagina.event.add('click', function(){
-	query(document).scroll.to(0, 800);
+	qDoc.scroll.to(0, 800);
 });
 
 menuNavDrop.onopen = function(){
